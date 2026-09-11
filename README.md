@@ -49,7 +49,7 @@ REJECTED / RETIREDを再検討する際は履歴を残し、HYPOTHESISへ戻し�
 
 ## IDと履歴
 
-検証開始前に各仮説の条件と採用基準を固定し、Test Criteria Fixed Atに固定日時（タイムゾーン付き）を記録する。必要項目が1つでも未確定ならTESTINGへ進めない。v0.1時点ではHYP-001〜HYP-008すべて未固定であり、検証は開始していない。
+検証開始前に各仮説の条件と採用基準を固定し、Test Criteria Fixed Atに固定日時（タイムゾーン付き）を記録する。必要項目が1つでも未確定ならTESTINGへ進めない。HYP-001〜007は未固定。HYP-008 v0.1のみ2026-09-11T15:18:37+09:00に[条件を固定](03_hypotheses/HYP-008-failed-high-breakdown-retest.md)してTESTINGへ移行した。完了した検証0件、正式採用0件。
 
 条件・採用基準を変更する場合は、既存版を上書きせず、例えばHYP-008 v0.1からv0.2へ分ける。旧版の条件・採用基準・検証結果を削除せず保持し、新版にVersion、Test Criteria Fixed At、Promotion Criteria、Version History、Change Reasonを記録する。変更日・変更理由・変更差分を必ず残し、旧版と新版の結果は別集計する。具体的な保存方法は[仮説管理](03_hypotheses/README.md)に従う。
 
