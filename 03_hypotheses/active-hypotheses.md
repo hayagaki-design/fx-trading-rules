@@ -14,10 +14,11 @@ Created / Last Reviewed: 2026-09-11
 | HYP-006 | v0.1 | UNKNOWN（未固定） | UNKNOWN（未固定） |
 | HYP-007 | v0.1 | UNKNOWN（未固定） | UNKNOWN（未固定） |
 | HYP-008 | v0.1 | 2026-09-11T15:18:37+09:00（Asia/Tokyo） | [固定済み・50件基準](HYP-008-failed-high-breakdown-retest.md) |
+| HYP-009 | v0.1 | 2026-09-14T13:31:09+09:00（Asia/Tokyo） | [探索30件・正式採用不可](HYP-009-5m-impulse-pullback-continuation.md) |
 
 Version History: 2026-09-11 全8件をv0.1として初期登録。HYP-001〜007のChange Reasonは初期構築のためであり、条件・採用基準は未固定のまま。HYP-008のみ2026-09-11T15:18:37+09:00に初回固定。Change Reason: ユーザー指定の客観条件で検証を開始するため。
 
-Status: HYP-001〜007はHYPOTHESIS、HYP-008のみTESTING。各仮説の検証回数は0。勝敗・勝率・平均利益・平均損失・平均RR・期待値・最大連敗はUNKNOWN。再現性・環境依存性は未検証。正式採用0件。
+Status: HYP-001〜007はHYPOTHESIS、HYP-008とHYP-009はTESTING。各仮説の検証回数は0。勝敗・勝率・平均利益・平均損失・平均RR・期待値・最大連敗はUNKNOWN。再現性・環境依存性は未検証。正式採用0件。
 
 | ID | 名称 | 定義 |
 | --- | --- | --- |
@@ -29,6 +30,7 @@ Status: HYP-001〜007はHYPOTHESIS、HYP-008のみTESTING。各仮説の検証�
 | HYP-006 | エントリー前に撤退条件を決める | [撤退](../01_principles/exit-principles.md) |
 | HYP-007 | 損切りを広げない | [リスク管理](../01_principles/risk-management.md) |
 | HYP-008 | 重要高値ブレイク失敗 → 支持帯割れ → 戻り売り | [個別仮説](HYP-008-failed-high-breakdown-retest.md) |
+| HYP-009 | 5分足インパルス・プルバック継続 | [個別仮説](HYP-009-5m-impulse-pullback-continuation.md) |
 
 ## 検証課題
 
@@ -53,3 +55,5 @@ HYP-001〜007の対象時間足・検証期間・必要件数・採用閾値はU
 - 未解消の正式ルール間矛盾: 該当なし（正式ルール0件）。
 
 履歴: 2026-09-11 — 8件をHYPOTHESISとして初期登録。昇格なし。
+
+履歴: 2026-09-14 — HYP-009 v0.1をTESTINGとして追加。固定日時2026-09-14T13:31:09+09:00、Change Reason: 5分足の探索用母集団を別検証するため。フォワード30件、実注文リスク0.25%。HYP-008の条件・状態・結果は変更せず完全別集計。HYP-009の30件だけでは正式採用しない。
