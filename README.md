@@ -37,6 +37,8 @@ REJECTED / RETIREDを再検討する際は履歴を残し、HYPOTHESISへ戻し�
 
 ## 日々の運用
 
+会話のチャート判定がずれた場合は[チャート判定の運用正本](01_principles/chart-assessment-canonical.md)へ戻る。5分足は通常HYP-009、15分足はHYP-008。通常009の1.5R固定利確と、明示宣言による[1.5Rロック派生](03_hypotheses/HYP-009-lock-1.5R-v0.1.md)を分離する。派生はHYPOTHESISであり、固定条件による検証・採用は未実施。
+
 1. 事前に上・下・レンジの条件分岐、撤退条件、利確候補を記録する。
 2. 結果にかかわらず、対象条件に合う事例・見送り・ルール違反を残す。事後解釈は事前シナリオと分離する。
 3. 気づきをOBSERVEDとして保存し、価格そのものより値動きの構造へ抽象化する。
@@ -49,7 +51,7 @@ REJECTED / RETIREDを再検討する際は履歴を残し、HYPOTHESISへ戻し�
 
 ## IDと履歴
 
-検証開始前に各仮説の条件と採用基準を固定し、Test Criteria Fixed Atに固定日時（タイムゾーン付き）を記録する。必要項目が1つでも未確定ならTESTINGへ進めない。HYP-001〜007は未固定。HYP-008 v0.1のみ2026-09-11T15:18:37+09:00に[条件を固定](03_hypotheses/HYP-008-failed-high-breakdown-retest.md)してTESTINGへ移行した。完了した検証0件、正式採用0件。
+検証開始前に各仮説の条件と採用基準を固定し、Test Criteria Fixed Atに固定日時（タイムゾーン付き）を記録する。必要項目が1つでも未確定ならTESTINGへ進めない。HYP-001〜007は未固定。HYP-008と通常HYP-009はTESTING（条件は[台帳](03_hypotheses/active-hypotheses.md)参照）。1.5Rロック派生はHYPOTHESIS。完了した検証0件、正式採用0件。
 
 条件・採用基準を変更する場合は、既存版を上書きせず、例えばHYP-008 v0.1からv0.2へ分ける。旧版の条件・採用基準・検証結果を削除せず保持し、新版にVersion、Test Criteria Fixed At、Promotion Criteria、Version History、Change Reasonを記録する。変更日・変更理由・変更差分を必ず残し、旧版と新版の結果は別集計する。具体的な保存方法は[仮説管理](03_hypotheses/README.md)に従う。
 
