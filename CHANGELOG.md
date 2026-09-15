@@ -1,5 +1,12 @@
 # Changelog
 
+## HYP-009 AUTO OBSERVER v0.1 judgement engine — 2026-09-16
+
+- 確定済みUSDJPY 5分OHLC CSVの時系列入力、左右1本の確定スイング、候補選択、押し戻り、トリガー、仮想Entry/SL/固定1.5R TP、12本出口、MFE/MAEを実行する判定エンジンを追加。
+- 既存37列正式CSV・見送りCSVへの互換記録をdry-run既定／明示的writeで実装。構造キーと既存IDで二重追加を防止し、手入力行を保護。見送りのR定義不能はNA。
+- スプレッド・イベント・価格系列・往復コスト・フォワード出所が不明ならPENDING。過去ファイルの後日読み直しを正式フォワードへ自動昇格させない。
+- 凍結済みHYP-009本文・protocol・通常/派生の既存CSVと採点結果は変更なし。注文・市場データAPI接続なし。
+
 ## HYP-009 validation records and rejection observations — 2026-09-15
 
 - 通常009の固定本文・37列CSV・採点規約は変更せず、見送り／データ不足の別CSVと運用仕様、CSV由来の読み取り専用集計を追加。

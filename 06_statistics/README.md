@@ -56,3 +56,9 @@ USDJPY 5分足、固定日時2026-09-14T13:31:09+09:00。固定後フォワー�
 [運用仕様](HYP-009-observation-operations.md) / [見送りCSV](HYP-009-rejected-opportunities.csv) / [読み取り専用集計](summarize_hyp009.py)
 
 通常009の正式件数は既存37列CSVの有効完了行から再計算する。見送りCSVは別正本で、2026-09-15の大きく長いインパルスの概算観測を暫定登録した。見送り結果は理由別・観測基準別に分け、R定義不能ならNAとする。最新件数は上記スクリプトを実行して確認し、このREADMEの固定時点の数字は更新しない。
+
+## HYP-009 AUTO OBSERVER v0.1
+
+[入力仕様・実行方法](HYP-009-auto-observer-README.md) / [逐次判定エンジン](hyp009_auto_observer.py) / [Golden fixture](fixtures/hyp009-golden-long.csv)
+
+通常009の凍結条件をOHLCから実行する。入力のspread・イベント・価格系列・往復コスト・フォワード観測証拠が不足すれば有効完了とせず、既存のTRUE/FALSE/PENDING規約を保持する。dry-run既定、明示的writeのみ。派生ロック・実売買・証券会社APIは対象外。

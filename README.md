@@ -41,6 +41,8 @@ REJECTED / RETIREDを再検討する際は履歴を残し、HYPOTHESISへ戻し�
 
 HYP-009の正式サンプルは[既存37列CSV](06_statistics/HYP-009-v0.1-tests.csv)、見送りとデータ不足の観測は[別CSV](06_statistics/HYP-009-rejected-opportunities.csv)を正本とする。[検証管理・記入方法](06_statistics/HYP-009-observation-operations.md)を参照。現況の勝敗・有効完了・見送りは `python 06_statistics/summarize_hyp009.py` で両CSVから再計算する。見送りを正式30件や通常・派生成績に加算しない。
 
+CSVの確定済みUSDJPY 5分足から通常HYP-009 v0.1を逐次判定する[HYP-009 AUTO OBSERVER](06_statistics/HYP-009-auto-observer-README.md)を追加。dry-runが既定で、既存CSVへの記録は`--write`の明示指定時のみ。市場データ取得や注文機能は含まない。
+
 1. 事前に上・下・レンジの条件分岐、撤退条件、利確候補を記録する。
 2. 結果にかかわらず、対象条件に合う事例・見送り・ルール違反を残す。事後解釈は事前シナリオと分離する。
 3. 気づきをOBSERVEDとして保存し、価格そのものより値動きの構造へ抽象化する。
