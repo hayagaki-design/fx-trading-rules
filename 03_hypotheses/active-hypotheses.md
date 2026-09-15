@@ -19,7 +19,7 @@ Created / Last Reviewed: 2026-09-11
 
 Version History: 2026-09-11 全8件をv0.1として初期登録。HYP-001〜007のChange Reasonは初期構築のためであり、条件・採用基準は未固定のまま。HYP-008のみ2026-09-11T15:18:37+09:00に初回固定。Change Reason: ユーザー指定の客観条件で検証を開始するため。
 
-Status: HYP-001〜007はHYPOTHESIS、HYP-008とHYP-009はTESTING。各仮説の検証回数は0。勝敗・勝率・平均利益・平均損失・平均RR・期待値・最大連敗はUNKNOWN。再現性・環境依存性は未検証。正式採用0件。
+Status: HYP-001〜007はHYPOTHESIS、HYP-008とHYP-009はTESTING。各仮説の登録時点の検証回数は0。HYP-009の最新件数・勝敗・期待値・PFは[専用CSV由来の集計](../06_statistics/summarize_hyp009.py)を参照し、台帳で手入力更新しない。未確認の成績はUNKNOWN。再現性・環境依存性は未検証。正式採用0件。
 
 | ID | 名称 | 定義 |
 | --- | --- | --- |

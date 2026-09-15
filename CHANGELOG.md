@@ -1,5 +1,12 @@
 # Changelog
 
+## HYP-009 validation records and rejection observations — 2026-09-15
+
+- 通常009の固定本文・37列CSV・採点規約は変更せず、見送り／データ不足の別CSVと運用仕様、CSV由来の読み取り専用集計を追加。
+- 2026-09-15の20:35付近→21:20付近の概算上昇を、IMPULSE_TOO_LARGEとIMPULSE_TOO_LONGの暫定観測として記録。OHLC・確定スイング・後続の押し／トリガー・Rは未確認。正式サンプルにしない。
+- チャート判定の確定足表示と遅延Entry禁止を補足。判定ミス分類を既存レビューに追加。仮説管理READMEの旧いHYP-008のみTESTINGという現況案内を訂正。
+- 正式件数と見送り件数はCSVから計算し、READMEの手入力数字を現在値として扱わない。派生は専用観察記録のまま分離。
+
 ## HYP-009 1.5R lock variant and canonical chart assessment — 2026-09-15
 
 - 1.5R到達後の対象保有への明示宣言による継続案を、HYP-009-lock-1.5R v0.1 / HYPOTHESISとして追加。採用基準未固定、検証0件、正式採用なし。
