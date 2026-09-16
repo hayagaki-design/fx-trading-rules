@@ -407,6 +407,8 @@ class InputAndRecords(unittest.TestCase):
     def test_double_write_keeps_one_rejection_id(self):
         with tempfile.TemporaryDirectory() as directory:
             f, p = self._targets(directory)
+            with p.open(encoding='utf-8', newline='') as handle:
+                baseline = list(csv.DictReader(handle))
             o = run(load_candles(BASE / 'fixtures/hyp009-golden-no-trigger.csv'))
             write_records(o, f, p)
             first_bytes = f.read_bytes(), p.read_bytes()
@@ -414,8 +416,8 @@ class InputAndRecords(unittest.TestCase):
             self.assertEqual((f.read_bytes(), p.read_bytes()), first_bytes)
             with p.open(encoding='utf-8', newline='') as handle:
                 rows = list(csv.DictReader(handle))
-            self.assertEqual(len(rows), 2)  # existing provisional + one golden rejection
-            self.assertEqual(len({r['opportunity_id'] for r in rows}), 2)
+            self.assertEqual(len(rows), len(baseline) + 1)
+            self.assertEqual(len({r['opportunity_id'] for r in rows}), len(rows))
 
     def test_open_auto_row_updates_to_complete_without_new_id(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -443,11 +445,13 @@ class InputAndRecords(unittest.TestCase):
     def test_written_rejection_does_not_enter_formal_statistics(self):
         with tempfile.TemporaryDirectory() as directory:
             f, p = self._targets(directory)
+            baseline = summarize(read_csv(f, 'case_id'), read_csv(p, 'opportunity_id'))
             data = make_long()
             data[5] = replace(data[5], spread=D('0.51'))
             write_records(run(data), f, p)
             summary = summarize(read_csv(f, 'case_id'), read_csv(p, 'opportunity_id'))
-            self.assertEqual((summary['HYP-009 v0.1']['Valid completed samples'], summary['HYP-009 v0.1']['Rejected opportunities']), (0, 2))
+            self.assertEqual(summary['HYP-009 v0.1']['Valid completed samples'], 0)
+            self.assertEqual(summary['HYP-009 v0.1']['Rejected opportunities'], baseline['HYP-009 v0.1']['Rejected opportunities'] + 1)
             self.assertEqual(summary['Audit errors'], [])
 
     @staticmethod
